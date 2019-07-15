@@ -1,6 +1,13 @@
+body{
+
+    background-color: grey;
+
+}
+
 .board{
     display: flex;
-    background-color:  #e20d0d;
+    /*background-color:  #e20d0d;*/
+    background-image: url('img/fondo.jpg');
     border-radius: 5px;
     padding: 1vw;
     margin-top: 10vh;
@@ -28,13 +35,13 @@
 .board button.peg{
 
 
-    background-color: #0000aa;
+    background-color: #1f1f25;
 }
 
 
 .board button.peg:hover{
 
-    background-color: #0000ff
+    background-color: #0e0e14
 }
 
 .board button.peg:active{
@@ -46,24 +53,24 @@
 .board button.hole{
 
 
-    background-color:darkcyan;
+    background-color:rgb(208, 228, 228);
 }
 
 .board button.selected{
 
-    background-color: chocolate;
+    background-color: rgb(61, 58, 55);
 
 }
 
 .board button.selected:active{
 
-    background-color: rgb(196, 91, 17);
+    background-color: rgb(116, 67, 30);
 
 }
 
 
 .board button.suggestion {
 
-    background-color: red;
+    background-color: rgb(17, 18, 92);
 
 }
