@@ -1,17 +1,82 @@
 body{
 
     background-color: grey;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.section{
+
+    display: flex;
+    flex-direction: row;
+    background-image: url('img/fondo.jpg');
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.panel{
+    display: flex;
+    width: 40vw;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    border: solid rgb(73, 71, 71) 10px;
+   
+    
+    
+
+
+}
+
+.panel form{
+
+   display: flex;
+   flex-direction: column;
+  
+
+}
+
+.panel form h2{
+
+    color: white;
+    box-shadow: 0 0 6px rgb(192, 164, 8);
+}
+
+.panel form input{
+
+    height: 30px;;
+    margin-bottom: 1%;
 }
 
 .board{
     display: flex;
-    /*background-color:  #e20d0d;*/
-    background-image: url('img/fondo.jpg');
+    width: 60vw;
+    height: 60vh;
     border-radius: 5px;
-    padding: 1vw;
-    margin-top: 10vh;
     justify-content: center;
+    align-items: center;
+    border: solid rgb(73, 71, 71) 10px;
+    background-color: dimgray;
 }
 
 
@@ -22,7 +87,7 @@ body{
     margin: 2px;
     border: 1px solid #999;
     border-radius: 50px;
-
+    box-shadow: 0 0 6px rgb(192, 164, 8);
 }
 
 .board button.hidden{
@@ -53,24 +118,24 @@ body{
 .board button.hole{
 
 
-    background-color:rgb(208, 228, 228);
+    background-color: white;
 }
 
 .board button.selected{
 
-    background-color: rgb(61, 58, 55);
+    background-color: blue;
 
 }
 
 .board button.selected:active{
 
-    background-color: rgb(116, 67, 30);
+    background-color: red;
 
 }
 
 
 .board button.suggestion {
 
-    background-color: rgb(17, 18, 92);
+    background-color: green;
 
 }

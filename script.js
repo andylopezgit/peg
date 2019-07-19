@@ -1,20 +1,33 @@
 var board = [ //array de objetos
 
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
     [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
     [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 0 }, { value: 1 }, { value: 1 }, { value: 1 }],
     [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
 
 ]
 
 var selectedPeg = { x: undefined, y: undefined }
 
+var suggestions = []
+
 var createId = function (rowN, colN) {
 
     return 'peg-' + rowN + '-' + colN
+}
+
+var getPositionFromId = function (id) {
+    var idParts = id && id.length ? id.split('-') : []
+    if (idParts.length === 3) {
+        return {
+            x: parseInt(idParts[1]),
+            y: parseInt(idParts[2])
+        }
+    }
+    return {}
 }
 
 var generateCell = function (cell, rowN, colN) {
@@ -96,22 +109,30 @@ var showSuggestions = function () {
     }
     if (near.above.className == 'peg' && possible.above.className == 'hole') {
         possible.above.className = 'suggestion'
+        suggestions.push(possible['above'].id)
+        console.log(suggestions)
     }
     if (near.left.className == 'peg' && possible.left.className == 'hole') {
         possible.left.className = 'suggestion'
+        suggestions.push(possible['left'].id)
+        console.log(suggestions)
     }
     if (near.right.className == 'peg' && possible.right.className == 'hole') {
         possible.right.className = 'suggestion'
+        suggestions.push(possible['right'].id)
+        console.log(suggestions)
     }
     if (near.bellow.className == 'peg' && possible.bellow.className == 'hole') {
         possible.bellow.className = 'suggestion'
+        suggestions.push(possible['bellow'].id)
+        console.log(suggestions)
     }
 }
 
 
 
-var selectedPeg = function (evt) {
-
+var selectPeg = function (evt) {
+    suggestions = []
     var peg = evt.target
     var idParts = peg.id && peg.id.length ? peg.id.split('-') : []
     if (idParts.length === 3) {
@@ -135,7 +156,47 @@ var selectedPeg = function (evt) {
 var addPegsEventHandlers = function (pegs) {
 
     for (var i = 0; i < pegs.length; i++) {
-        pegs[i].onclick = selectedPeg
+        pegs[i].onclick = selectPeg
+
+    }
+}
+
+var movePeg = function (evt) {
+
+    var id = evt.target.id
+    var pos = getPositionFromId(id)
+    if (pos.x !== undefined && pos.y !== undefined) {
+
+        if (suggestions.includes(id)) {
+
+            var oldRow = selectedPeg.x
+            var oldCol = selectedPeg.y
+            var newRow = pos.x
+            var newCol = pos.y
+            var midRow = oldRow + ((newRow - oldRow) / 2)
+            var midCol = oldCol + ((newCol - oldCol) / 2)
+            board[oldRow][oldCol] = { value: 0 }
+            board[midRow][midCol] = { value: 0 }
+            board[newRow][newCol] = { value: 1 }
+
+            selectedPeg = { x: undefined, y: undefined }
+            suggestions = []
+            init()
+
+
+
+        }
+
+
+    }
+
+
+}
+
+var addHolesEventHandlers = function (holes) {
+
+    for (var i = 0; i < holes.length; i++) {
+        holes[i].onclick = movePeg
 
     }
 }
@@ -146,6 +207,8 @@ var init = function () {
     boardElement.innerHTML = generateBoard()
     var pegs = boardElement.getElementsByClassName('peg')
     addPegsEventHandlers(pegs)
+    var holes = boardElement.getElementsByClassName('hole')
+    addHolesEventHandlers(holes)
     //console.log('boardElement',boardElement)
 
 }
