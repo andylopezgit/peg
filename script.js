@@ -80,6 +80,7 @@ var unselectPeg = function () {
         for (var i = 0; i < suggestion.length; i++) {
 
             suggestion[i].className = 'hole'
+
         }
 
     }
@@ -110,22 +111,22 @@ var showSuggestions = function () {
     if (near.above.className == 'peg' && possible.above.className == 'hole') {
         possible.above.className = 'suggestion'
         suggestions.push(possible['above'].id)
-        console.log(suggestions)
+        //console.log(suggestions)
     }
     if (near.left.className == 'peg' && possible.left.className == 'hole') {
         possible.left.className = 'suggestion'
         suggestions.push(possible['left'].id)
-        console.log(suggestions)
+        //console.log(suggestions)
     }
     if (near.right.className == 'peg' && possible.right.className == 'hole') {
         possible.right.className = 'suggestion'
         suggestions.push(possible['right'].id)
-        console.log(suggestions)
+        //console.log(suggestions)
     }
     if (near.bellow.className == 'peg' && possible.bellow.className == 'hole') {
         possible.bellow.className = 'suggestion'
         suggestions.push(possible['bellow'].id)
-        console.log(suggestions)
+        //console.log(suggestions)
     }
 }
 
@@ -193,6 +194,77 @@ var movePeg = function (evt) {
 
 }
 
+
+//funcion para localstorage
+
+var controlLocalStorage = function (evt) {
+
+    if (localStorage) {
+
+        alert('su navegador soporta local storage')
+    }
+    else {
+
+        alert('no soporta')
+    }
+
+}
+
+
+//funcion guardar localstorage
+var saveGame = function (evt) {
+
+    var localName = document.getElementById('name').value
+    localStorage.setItem('nombre', localName)
+
+}
+
+var addSaveEventHandlers = function (buttonSend) {
+
+    buttonSend.onclick = saveGame
+
+}
+
+
+var puntos = function (x) {
+    var a = 0;
+
+    if (x.length == 1) {
+
+
+        var a = 0
+    }
+
+
+    else {
+
+        for (let i = 2; i <= x.length; i++) {
+
+            if(x.length ==3){
+
+                a += 1000
+                
+
+            }
+            else{
+
+                a+=100
+
+
+            }
+
+        }
+
+    }
+    return a
+
+
+}
+
+
+
+
+
 var addHolesEventHandlers = function (holes) {
 
     for (var i = 0; i < holes.length; i++) {
@@ -209,6 +281,20 @@ var init = function () {
     addPegsEventHandlers(pegs)
     var holes = boardElement.getElementsByClassName('hole')
     addHolesEventHandlers(holes)
+    //controlLocalStorage(localStorage)
+    addSaveEventHandlers(buttonSend)
+
+    var pasar = puntos(holes)
+    document.getElementById('puntaje').value = pasar
+
+
+    console.log(puntos(holes));
+
+
+
+
+
+
     //console.log('boardElement',boardElement)
 
 }
