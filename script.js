@@ -50,7 +50,7 @@ var generateCell = function (cell, rowN, colN) {
 
 }
 
-var generateRow = function (row, rowN) {  //2
+var generateRow = function (row, rowN) {
     var html = '<div class"row">'
     for (var j = 0; j < row.length; j++) {
         html += generateCell(row[j], rowN, j);
@@ -219,51 +219,44 @@ var saveGame = function (evt) {
 
 }
 
-var addSaveEventHandlers = function (buttonSend) {
+//funcion para guardar partida
 
-    buttonSend.onclick = saveGame
-
+var saveGame = function (evt) {
+    var localBoard = JSON.stringify(board)
+    var name = document.getElementById('name').value
+    var puntos = document.getElementById('puntaje').value
+    localStorage.setItem('board', localBoard)
+    localStorage.setItem('name', name)
+    localStorage.setItem('puntos', puntos)
 }
 
+//funcion para contar puntaje
 
 var puntos = function (x) {
     var a = 0;
 
     if (x.length == 1) {
-
-
         var a = 0
     }
-
 
     else {
 
         for (let i = 2; i <= x.length; i++) {
 
-            if(x.length ==3){
+           
 
-                a += 1000
-                
-
-            }
-            else{
-
-                a+=100
-
-
-            }
-
+                a += 1
+            
         }
-
     }
     return a
-
-
 }
 
+var addSaveEventHandlers = function(save){
 
+    save.onclick = saveGame
 
-
+}
 
 var addHolesEventHandlers = function (holes) {
 
@@ -273,6 +266,11 @@ var addHolesEventHandlers = function (holes) {
     }
 }
 
+var addSaveEventHandlers = function (save) {
+    save.onclick = saveGame
+}
+
+
 var init = function () {
 
     var boardElement = document.getElementById('board')
@@ -281,21 +279,11 @@ var init = function () {
     addPegsEventHandlers(pegs)
     var holes = boardElement.getElementsByClassName('hole')
     addHolesEventHandlers(holes)
-    //controlLocalStorage(localStorage)
-    addSaveEventHandlers(buttonSend)
+    var save = document.getElementById('buttonSave')
+    addSaveEventHandlers(save)
 
     var pasar = puntos(holes)
     document.getElementById('puntaje').value = pasar
-
-
-    console.log(puntos(holes));
-
-
-
-
-
-
-    //console.log('boardElement',boardElement)
 
 }
 

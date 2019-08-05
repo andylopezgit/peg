@@ -1,141 +1,110 @@
-body{
-
+body {
     background-color: grey;
     display: flex;
     flex-direction: column;
-
 }
 
-.header{
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    widows: 100%;
 }
 
-.footer{
-
+.footer {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    width: 100%;
 }
 
-.section{
-
-    display: flex;
-    flex-direction: row;
+.section {
     background-image: url('img/fondo.jpg');
-    width: 100vw;
-    height: 70vh;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-
-
 }
 
-.panel{
+.panel {
     display: flex;
-    width: 40vw;
-    height: 60vh;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    border: solid rgb(73, 71, 71) 10px;
-   
-    
-    
-
-
+    margin: 1px;
 }
 
-.panel form{
-
-   display: flex;
-   flex-direction: column;
-  
-
+.panel form {
+    display: flex;
+    flex-direction: column;
 }
 
-.panel form h2{
-
+.panel form h2 {
     color: white;
     box-shadow: 0 0 6px rgb(192, 164, 8);
 }
 
-.panel form input{
-
-    height: 30px;;
-    margin-bottom: 1%;
+.panel form input {
+    height: 30px;
+    ;
+    /*margin-bottom: 1%;*/
 }
 
-.board{
+.board {
     display: flex;
-    width: 60vw;
-    height: 60vh;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    border: solid rgb(73, 71, 71) 10px;
     background-color: dimgray;
+    padding: 1%;
 }
 
-
 .board button {
-
     width: 40px;
     height: 40px;
     margin: 2px;
     border: 1px solid #999;
     border-radius: 50px;
-    box-shadow: 0 0 6px rgb(192, 164, 8);
+    /*box-shadow: 0 0 6px rgb(192, 164, 8);*/
 }
 
-.board button.hidden{
-
+.board button.hidden {
     visibility: hidden;
-
 }
 
-
-.board button.peg{
-
-
+.board button.peg {
     background-color: #1f1f25;
 }
 
-
-.board button.peg:hover{
-
+.board button.peg:hover {
     background-color: #0e0e14
 }
 
-.board button.peg:active{
- background-color: #000066;
-
+.board button.peg:active {
+    background-color: #000066;
 }
 
-
-.board button.hole{
-
-
+.board button.hole {
     background-color: white;
 }
 
-.board button.selected{
-
+.board button.selected {
     background-color: blue;
-
 }
 
-.board button.selected:active{
-
+.board button.selected:active {
     background-color: red;
-
 }
-
 
 .board button.suggestion {
-
     background-color: green;
-
 }
