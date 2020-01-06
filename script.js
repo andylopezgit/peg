@@ -266,8 +266,23 @@ var addHolesEventHandlers = function (holes) {
 //     console.log('hola')   
 // }
 
-function myFunction() {
-    alert ("Hello World!");
+//funcion para resetear, preuntando si o no
+var varReset = function reset() {
+    console.log('me estoy ejecutando cuando apreto reset y no antes')
+    if (confirm("Estas seguro que queres reiniciar?, se perdera lo que no hayas guardado")) {
+        
+        var response = "OK"
+        alert("Elegiste Ok, el juego se reiniciara")
+        boardElement.innerHTML = generateBoard()
+
+    }
+    else {
+
+        var response = "CANCELAR"
+        alert("Elegiste candelar, ahora puedes guardar")
+    }
+
+    
   }
 
 var init = function () {
@@ -292,7 +307,7 @@ var init = function () {
     
     document.getElementById('puntaje').value = pasar
 
-    document.getElementById("buttonReset").addEventListener("click", myFunction);
+    document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
 
 
 
