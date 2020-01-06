@@ -215,13 +215,30 @@ var saveGameStorage = function (evt) {
 
 //funcion para guardar partida
 
-var saveGame = function (evt) {
+// var saveGame = function (evt) {
+//     var localBoard = JSON.stringify(board)
+//     var name = document.getElementById('name').value
+//     var puntos = document.getElementById('puntaje').value
+//     localStorage.setItem('board', localBoard)
+//     localStorage.setItem('name', name)
+//     localStorage.setItem('puntos', puntos)
+// }
+
+var varSave = function saveGame() {
+        
     var localBoard = JSON.stringify(board)
+        
     var name = document.getElementById('name').value
-    var puntos = document.getElementById('puntaje').value
+        
+    var score = document.getElementById('score').value
+
     localStorage.setItem('board', localBoard)
+
     localStorage.setItem('name', name)
-    localStorage.setItem('puntos', puntos)
+
+    localStorage.setItem('score', score)
+
+        
 }
 
 //funcion para contar puntaje
@@ -301,11 +318,11 @@ var init = function () {
 
     var save = document.getElementById('buttonSave')
     
-    addSaveEventHandlers(save) //ejecuto la funcion para guardar el juego
+    document.getElementById("buttonSave").addEventListener("click", varSave);
 
     var pasar = puntos(holes)
     
-    document.getElementById('puntaje').value = pasar
+    document.getElementById('score').value = pasar
 
     document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
 
