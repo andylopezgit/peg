@@ -187,6 +187,8 @@ var movePeg = function (evt) {
         }
     }
 }
+//funcion iniciar juego
+
 
 
 //funcion para localstorage
@@ -205,13 +207,16 @@ var controlLocalStorage = function (evt) {
 }
 
 
+
+
+
 //funcion guardar localstorage
-var saveGameStorage = function (evt) {
+// var saveGameStorage = function (evt) {
 
-    var localName = document.getElementById('name').value
-    localStorage.setItem('nombre', localName)
+//     var localName = document.getElementById('name').value
+//     localStorage.setItem('nombre', localName)
 
-}
+// }
 
 //funcion para guardar partida
 
@@ -224,7 +229,7 @@ var saveGameStorage = function (evt) {
 //     localStorage.setItem('puntos', puntos)
 // }
 
-var varSave = function saveGame() {
+function saveGame() {
         
     var localBoard = JSON.stringify(board)
         
@@ -238,7 +243,15 @@ var varSave = function saveGame() {
 
     localStorage.setItem('score', score)
 
+    localStorage.setItem('date', Date())
+
         
+}
+
+
+function getSaveRanking(){
+    var dat = document.getElementById('rankingName').value
+    dat = localStorage.getItem('name')
 }
 
 //funcion para contar puntaje
@@ -262,11 +275,11 @@ var puntos = function (x) {
      return a
 }
 
-var addSaveEventHandlers = function(save){
+// var addSaveEventHandlers = function(save){
 
-    save.onclick = saveGame
+//     save.onclick = saveGame
 
-}
+// }
 
 var addHolesEventHandlers = function (holes) {
 
@@ -300,7 +313,11 @@ var varReset = function reset() {
     }
 
     
-  }
+}
+
+//funcion recuperar datos localHost
+
+
 
 var init = function () {
 
@@ -316,15 +333,26 @@ var init = function () {
     
     addHolesEventHandlers(holes)
 
+    
+
     var save = document.getElementById('buttonSave')
     
-    document.getElementById("buttonSave").addEventListener("click", varSave);
+    document.getElementById("buttonSave").addEventListener("click", saveGame);
 
     var pasar = puntos(holes)
     
     document.getElementById('score').value = pasar
 
     document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
+
+    var getLocName = localStorage.getItem("name")
+    
+    document.getElementById('rankingName').value = getLocName
+
+    var getLocScore = localStorage.getItem("score")
+    
+    document.getElementById('rankingScore').value = getLocScore
+
 
 
 
