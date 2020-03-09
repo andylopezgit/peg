@@ -73,11 +73,14 @@ body {
 
     display: flex;
     width: 20vw;
-    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
-    box-shadow: 0 0 20px rgb(8, 155, 192);
+    flex-direction: column;
+    box-shadow: 0 0 20px rgb(8, 155, 192)
 
+}
+
+#formScore h4 {
+    text-align: center;
 }
 
 .panel2 #formScore input {
@@ -87,7 +90,6 @@ body {
     justify-content: center;
     color:rgb(0, 0, 0);
     font-size: 20px;
-    width: 50%;
     box-shadow: 0 0 50px rgb(192, 164, 8);
     text-align: center;
 }
@@ -97,7 +99,6 @@ body {
     background-color: yellow;
     justify-content: center;
     align-items: center;
-    width: 50%;
     text-align: center;
 
 
