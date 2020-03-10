@@ -359,8 +359,9 @@ var init = function () {
 
     var getLocScore = localStorage.getItem("score")
     
-    document.getElementById('rankingScore').value = getLocScoregit
+    document.getElementById('rankingScore').value = getLocScore
 
+    console.log(getLocScore)
 
 }
 
