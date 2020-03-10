@@ -155,6 +155,7 @@ var selectPeg = function (evt) {
     }
 
 }
+
 var addPegsEventHandlers = function (pegs) {
 
     for (var i = 0; i < pegs.length; i++) {
@@ -206,6 +207,9 @@ var controlLocalStorage = function (evt) {
 
 }
 
+//Funcion para Agregar nombre antes de jugar
+
+
 
 
 
@@ -228,6 +232,8 @@ var controlLocalStorage = function (evt) {
 //     localStorage.setItem('name', name)
 //     localStorage.setItem('puntos', puntos)
 // }
+
+//Funcion para Guardar partida
 
 function saveGame() {
         
@@ -297,6 +303,7 @@ var addHolesEventHandlers = function (holes) {
 // }
 
 //funcion para resetear, preuntando si o no
+
 var varReset = function reset() {
     console.log('me estoy ejecutando cuando apreto reset y no antes')
     if (confirm("Estas seguro que queres reiniciar?, se perdera lo que no hayas guardado")) {
@@ -321,6 +328,7 @@ var varReset = function reset() {
 
 var init = function () {
 
+
     var boardElement = document.getElementById('board')
     
     boardElement.innerHTML = generateBoard()
@@ -337,7 +345,7 @@ var init = function () {
 
     var save = document.getElementById('buttonSave')
     
-    document.getElementById("buttonSave").addEventListener("click", saveGame);
+    save.addEventListener("click", saveGame);
 
     var pasar = puntos(holes)
     
@@ -352,6 +360,10 @@ var init = function () {
     var getLocScore = localStorage.getItem("score")
     
     document.getElementById('rankingScore').value = getLocScore
+
+    var nameResponse = prompt ('Ingrese su nombre')
+
+    document.getElementById('name').value = nameResponse
 
 
 
