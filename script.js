@@ -361,10 +361,6 @@ var init = function () {
     
     document.getElementById('rankingScore').value = getLocScore
 
-    var nameResponse = prompt ('Ingrese su nombre')
-
-    document.getElementById('name').value = nameResponse
-
 
 
 
