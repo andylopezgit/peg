@@ -191,7 +191,7 @@ var selectPeg = function (evt) {
 
     }
 
-    if (posibilities=== 0) {
+    if (posibilities === 0) {
         window.alert('No hay mas movimientos posibles')
       }
 
@@ -216,20 +216,21 @@ var gameOver= function() {
     suggestions= []
     if (posibilities=== 0) {
         console.log("no hay mas mov")
-    //   saveName()
+        saveName()
     }
   }
 
 
-  /* var saveName= function() {
+    var saveName= function() {
     var option= window.confirm('No hay mas movimientos posibles¿Desea guardar su puntaje?')
-    if(option== 1){
-      var form= document.getElementsByClassName('save-user')
+    if(option == 1){
+        console.log("selecciono 1")
+      /* var form= document.getElementsByClassName('save-user')
       form[0].style.display= 'inline-block'
       var formScore=document.getElementsByClassName('form-score')
-      formScore[0].innerHTML= 'puntaje acumulado: '+ score
+      formScore[0].innerHTML= 'puntaje acumulado: '+ score */
     }
-  } */
+  }
 
 var addPegsEventHandlers = function (pegs) {
 
@@ -396,10 +397,29 @@ var varReset = function reset() {
 
     
 }
+// desplegar menu
+
+var deplegar = document.getElementById('boton-desplegable')
+
 
 //funcion recuperar datos localHost
 
+// funcion para mostrar el menu
 
+function changeDisplay () {
+    var menu = document.getElementById('desplegar')
+    var x = menu.style.display
+    var y = getComputedStyle(menu)
+    var display = y.display
+
+    if (display === 'block') {
+        document.getElementById('desplegar').style.display = 'none'
+    } else {
+        document.getElementById('desplegar').style.display = 'block'
+    }
+    
+    //console.log(display)
+}   
 
 var init = function () {
 
@@ -440,6 +460,8 @@ var init = function () {
 
     gameOver()
 
+    var desplegable = document.getElementById('boton-desplegable')
+    desplegable.addEventListener("click", changeDisplay)
     //saveName()
 
 }

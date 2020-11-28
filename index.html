@@ -17,13 +17,16 @@
             </div>
             <div class="section">
                 <div class="panel">
-                    <form action="" id="form">
-                        <h2>MENU JUEGO</h2>
-                        <input type="text" placeholder="Ingrese nombre" id="name"><br>
-                        <button type="text" value="enviar" id="buttonSave">GUARDAR PARTIDA</button>
-                        <button type="text" value="resetear" id="buttonReset">REINICIAR</button>
-                        <button type="text" value="cargar" id="buttonGet">CARGAR PARTIDA</button>
-                    </form>
+                    <div id="menu">
+                        <button id="boton-desplegable">MENU JUEGO</button>
+                        <div class="desplegable" id="desplegar">
+                            <ul>
+                                <li type="text" value="enviar" id="buttonSave">GUARDAR PARTIDA</li>
+                                <li type="text" value="resetear" id="buttonReset">REINICIAR</li>
+                                <li type="text" value="cargar" id="buttonGet">CARGAR PARTIDA</li>
+                            </ul>
+                        </div> 
+                    </div>
                 </div><br>
 
                 <div id="board" class="board">
