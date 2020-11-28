@@ -265,7 +265,24 @@ var movePeg = function (evt) {
         }
     }
 }
-//funcion iniciar juego
+
+function button () {
+    var but = document.getElementById("sButton")
+    but.addEventListener('click', nam)
+}
+
+//funcion nombre mas de 3 letras
+function nam () {
+    var nombreLargo = document.getElementById("namePlayer").value
+
+    if (nombreLargo.length > 2) {
+        document.getElementById("namePlayer").value = nombreLargo.toUpperCase()
+    } else {
+        window.alert('El nombre debe ser mayor a 3 letras')
+        
+    }
+    
+}
 
 
 
@@ -447,6 +464,8 @@ var init = function () {
     
     document.getElementById('score').value = pasar
 
+    document.getElementById('scorePlayer').value = pasar
+
     document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
 
     var getLocName = localStorage.getItem("name")
@@ -457,13 +476,15 @@ var init = function () {
     
     document.getElementById('rankingScore').value = getLocScore
 
-    console.log(getLocScore)
+    //console.log(getLocScore)
 
     gameOver()
 
     var desplegable = document.getElementById('boton-desplegable')
     desplegable.addEventListener("click", changeDisplay)
     //saveName()
+
+    button ()
 
 }
 
