@@ -224,6 +224,7 @@ var gameOver= function() {
     var saveName= function() {
     var option= window.confirm('No hay mas movimientos posibles¿Desea guardar su puntaje?')
     if(option == 1){
+        changeDisplay()
         console.log("selecciono 1")
       /* var form= document.getElementsByClassName('save-user')
       form[0].style.display= 'inline-block'

@@ -31,8 +31,13 @@ body {
     align-items: center;
 }
 
+#sp {
+    text-align: center;
+}
+
+
 #desplegar {
-    display: block ;
+    display: none ;
     background:blue;
 }
 

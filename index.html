@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="conteiner">
-            <div class="header">
-                <h1>Peg Solitare</h1>
-            </div>
-            <div class="section">
-                <div class="panel">
-                    <div id="menu">
-                        <button id="boton-desplegable">MENU JUEGO</button>
-                        <div class="desplegable" id="desplegar">
-                            <ul>
-                                <li type="text" value="enviar" id="buttonSave">GUARDAR PARTIDA</li>
-                                <li type="text" value="resetear" id="buttonReset">REINICIAR</li>
-                                <li type="text" value="cargar" id="buttonGet">CARGAR PARTIDA</li>
-                            </ul>
-                        </div> 
+      <div class="header">
+        <h1>Peg Solitare</h1>
+      </div>
+      <div class="section">
+            <div class="panel">
+                <div id="menu">
+                    <div id="sp">
+                        <span id="boton-desplegable">MENU JUEGO</span>
                     </div>
-                </div><br>
-
-                <div id="board" class="board">
-                    </div><br>
-                 <div class="panel2">
-                        <form action="" id="formScore">
-                            <span><h3>SCORE</h3></span>
-                            <input type="text" id="score" value=" ">
-                            <h4>ULTIMO RESULTADO</h4>
-                            <input type="text" id="rankingName" value="">
-                            <input type="text" id="rankingScore" value="">
-                            
-                        </form>
-                 </div>
-
-
-            <div class="footer">
-                <h2>Andres Lopez</h2>
+                    <div class="desplegable" id="desplegar">
+                        <ul>
+                            <li type="text" value="enviar" id="buttonSave">
+                            GUARDAR PARTIDA
+                            </li>
+                            <li type="text" value="resetear" id="buttonReset">REINICIAR</li>
+                            <li type="text" value="cargar" id="buttonGet">
+                            CARGAR PARTIDA
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-<script src="script.js"></script>
+        <br />
 
+        <div id="board" class="board"></div>
+        <br />
+        <div class="panel2">
+          <form action="" id="formScore">
+            <span><h3>SCORE</h3></span>
+            <input type="text" id="score" value=" " />
+            <h4>ULTIMO RESULTADO</h4>
+            <input type="text" id="rankingName" value="" />
+            <input type="text" id="rankingScore" value="" />
+          </form>
+        </div>
+
+        <div class="footer">
+          <h2>Andres Lopez</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
