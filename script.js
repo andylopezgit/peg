@@ -398,23 +398,27 @@ var addHolesEventHandlers = function (holes) {
 
 //funcion para resetear, preuntando si o no
 
-var varReset = function reset() {
+/* var varReset = function reset() {
     console.log('me estoy ejecutando cuando apreto reset y no antes')
     if (confirm("Estas seguro que queres reiniciar?, se perdera lo que no hayas guardado")) {
         
         var response = "OK"
         alert("Elegiste Ok, el juego se reiniciara")
         boardElement.innerHTML = generateBoard()
+             //var boardElement = document.getElementById('board')
+    
+             boardElement.innerHTML = generateBoard()
 
+            
     }
     else {
 
         var response = "CANCELAR"
         alert("Elegiste candelar, ahora puedes guardar")
-    }
+    } */
 
     
-}
+//}
 // desplegar menu
 
 var deplegar = document.getElementById('boton-desplegable')
@@ -425,19 +429,43 @@ var deplegar = document.getElementById('boton-desplegable')
 // funcion para mostrar el menu
 
 function changeDisplay () {
-    var menu = document.getElementById('desplegar')
+    var menu = document.getElementById('panelName')
+    console.log('Hola')
     var x = menu.style.display
     var y = getComputedStyle(menu)
     var display = y.display
 
     if (display === 'block') {
-        document.getElementById('desplegar').style.display = 'none'
+        document.getElementById('panelName').style.display = 'none'
     } else {
-        document.getElementById('desplegar').style.display = 'block'
+        document.getElementById('panelName').style.display = 'block'
     }
     
     //console.log(display)
 }   
+
+
+
+var addResetEventHandlers= function(reset) {
+    reset.onclick= resetBoard
+  }
+
+  var resetBoard= function(evt) {
+    var option= confirm('¿Esta seguro que desea reiniciar el juego?')
+    if(option== 1){
+      for (var i= 0;i < board.length; i++){
+        for (var j= 0;j < board[i].length; j++){
+          if (board[i][j]&&board[i][j].value === 0) {
+            board[i][j]= {value: 1}
+          }
+        }
+      }
+    board[3][3] = {value: 0}
+    //score= 0
+    //showScore()
+    init()
+    }
+  }
 
 var init = function () {
 
@@ -466,7 +494,10 @@ var init = function () {
 
     document.getElementById('scorePlayer').value = pasar
 
-    document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
+    var reset= document.getElementById('buttonReset')
+    addResetEventHandlers(reset)
+
+    //document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
 
     var getLocName = localStorage.getItem("name")
     

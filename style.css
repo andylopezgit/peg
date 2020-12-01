@@ -23,6 +23,11 @@ body {
     width: 100%;
 }
 
+#panelName {
+    background: red;
+    display: none;
+}
+
 .section {
     background-image: url('img/fondo.jpg');
     width: 100%;
@@ -37,7 +42,7 @@ body {
 
 
 #desplegar {
-    display: none ;
+    display: block ;
     background:blue;
 }
 
@@ -77,7 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 1px;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 
@@ -179,13 +184,25 @@ body {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 500px) {
 
     body {
-        background-color: grey;
+        background-color: yellow;
         display: flex;
         flex-direction: column;
     }
+
+    #board {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
+        width: 320px;
+        height: 320px;
+        background-color: red;
+        }
 
     .panel {
         display: flex;

@@ -18,7 +18,7 @@
             <div class="panel">
                 <div id="menu">
                     <div id="sp">
-                        <span id="boton-desplegable">MENU JUEGO</span>
+                        <button id="boton-desplegable">MENU JUEGO</button>
                     </div>
                     <div class="desplegable" id="desplegar">
                         <ul>
@@ -31,7 +31,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div >
+                    <div id="panelName">
                         <form action="" method="post">
                             <input type="text" name="Nombre" id="namePlayer">
                             <input type="text" id="scorePlayer">
@@ -46,14 +46,35 @@
         <div id="board" class="board"></div>
         <br />
         <div class="panel2">
-          <form action="" id="formScore">
-            <span><h3>SCORE</h3></span>
-            <input type="text" id="score" value=" " />
-            <h4>ULTIMO RESULTADO</h4>
-            <input type="text" id="rankingName" value="" />
-            <input type="text" id="rankingScore" value="" />
-          </form>
+          <div class="">
+            <form action="" id="formScore">
+              <span><h3>Nuestras Redes Sociales</h3></span>
+              <input type="text" id="score" value=" " />
+              <h4>ULTIMO RESULTADO</h4>
+              <input type="text" id="rankingName" value="" />
+              <input type="text" id="rankingScore" value="" />
+            </form>
+          </div>
+          <div class="">
+            <form action="" id="formScore">
+              <span><h3>SCORE</h3></span>
+              <input type="text" id="score" value=" " />
+              <h4>ULTIMO RESULTADO</h4>
+              <input type="text" id="rankingName" value="" />
+              <input type="text" id="rankingScore" value="" />
+            </form>
+          </div>
+          <div class="">
+            <form action="mailto:alopezciotta@gmail.com" id="formScore">
+              <span><h3>Envianos un comentarios</h3></span>
+              <input type="text" id="score" value="" placeholder="Nombre"/>
+              <input type="mail" id="rankingName" value="" placeholder="Email" />
+              <textarea name="comentarios" rows="4"  placeholder="Comentarios..."></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
         </div>
+        
 
         <div class="footer">
           <h2>Andres Lopez</h2>
