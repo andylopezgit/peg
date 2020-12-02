@@ -23,6 +23,14 @@ body {
     width: 100%;
 }
 
+.footer h2 {
+    margin-right: 10px;
+}
+
+.footer a {
+    margin-right: 10px;
+}
+
 #panelName {
     background: red;
     display: none;
@@ -43,7 +51,8 @@ body {
 
 #desplegar {
     display: block ;
-    background:blue;
+    background: yellow;
+    box-shadow: 0 0 20px rgb(8, 155, 192)
 }
 
 .panel {
@@ -65,7 +74,7 @@ body {
 
 .panel form h2 {
     color: white;
-    box-shadow: 0 0 6px rgb(192, 164, 8);
+    box-shadow: 0 0 6 px rgb(192, 164, 8);
 }
 
 .panel form input {
@@ -82,14 +91,30 @@ body {
     justify-content: center;
     align-items: center;
     margin: 1px;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.panelScore {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.panelMail {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.mail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgb(8, 155, 192)
 }
 
 
 .panel2 #formScore {
 
     display: flex;
-    width: 25vw;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 0 20px rgb(8, 155, 192)
@@ -138,7 +163,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: dimgray;
-    padding: 1%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     
 }
 
@@ -243,5 +269,7 @@ body {
         justify-content: center;
         width: 100vw;
     }
+
+
 
 }
