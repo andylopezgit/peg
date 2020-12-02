@@ -225,11 +225,6 @@ var gameOver= function() {
     var option= window.confirm('No hay mas movimientos posibles¿Desea guardar su puntaje?')
     if(option == 1){
         changeDisplay()
-        console.log("selecciono 1")
-      /* var form= document.getElementsByClassName('save-user')
-      form[0].style.display= 'inline-block'
-      var formScore=document.getElementsByClassName('form-score')
-      formScore[0].innerHTML= 'puntaje acumulado: '+ score */
     }
   }
 
@@ -450,7 +445,20 @@ function changeDisplay () {
     }
     
     //console.log(display)
-}   
+}
+
+function showMenu () {
+    var menus = document.getElementById('desplegar')
+    var yy = getComputedStyle(menus)
+    var displayy = yy.display
+    console.log(displayy)
+
+    if (displayy === 'none') {
+        document.getElementById('desplegar').style.display = 'block'
+    } else {
+        document.getElementById('desplegar').style.display = 'none'
+    }
+}
 
 
 
@@ -524,7 +532,7 @@ var init = function () {
     gameOver()
 
     var desplegable = document.getElementById('boton-desplegable')
-    desplegable.addEventListener("click", changeDisplay)
+    desplegable.addEventListener("click", showMenu)
     //saveName()
 
     button ()
