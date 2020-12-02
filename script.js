@@ -267,7 +267,7 @@ var movePeg = function (evt) {
 }
 
 function button () {
-    var but = document.getElementById("sButton")
+    var but = document.getElementById("buttonSave")
     but.addEventListener('click', nam)
 }
 
@@ -333,7 +333,7 @@ function saveGame() {
         
     var localBoard = JSON.stringify(board)
         
-    var name = document.getElementById('name').value
+    var name = document.getElementById('namePlayer').value
         
     var score = document.getElementById('score').value
 
@@ -346,6 +346,14 @@ function saveGame() {
     localStorage.setItem('date', Date())
 
         
+}
+
+function getGame (env){
+    console.log('cargar')
+    var guardado = localStorage.getItem('board')
+    board = JSON.parse(guardado)
+    init()
+
 }
 
 
@@ -498,6 +506,10 @@ var init = function () {
     addResetEventHandlers(reset)
 
     //document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
+
+    var bgetGame = document.getElementById('buttonGet')
+    
+    bgetGame.addEventListener("click", getGame)
 
     var getLocName = localStorage.getItem("name")
     
