@@ -131,43 +131,6 @@ var createSuggestions= function() {
     }
   }
 
-/* var showSuggestions = function () {
-
-    var near = {
-        above: getElement(createId(selectedPeg.x - 1, selectedPeg.y)),
-        left: getElement(createId(selectedPeg.x, selectedPeg.y - 1)),
-        right: getElement(createId(selectedPeg.x, selectedPeg.y + 1)),
-        bellow: getElement(createId(selectedPeg.x + 1, selectedPeg.y)),
-    }
-
-    var possible = {
-        above: getElement(createId(selectedPeg.x - 2, selectedPeg.y)),
-        left: getElement(createId(selectedPeg.x, selectedPeg.y - 2)),
-        right: getElement(createId(selectedPeg.x, selectedPeg.y + 2)),
-        bellow: getElement(createId(selectedPeg.x + 2, selectedPeg.y)),
-    }
-    if (near.above.className == 'peg' && possible.above.className == 'hole') {
-        possible.above.className = 'suggestion'
-        suggestions.push(possible['above'].id)
-        console.log(suggestions)
-    }
-    if (near.left.className == 'peg' && possible.left.className == 'hole') {
-        possible.left.className = 'suggestion'
-        suggestions.push(possible['left'].id)
-        console.log(suggestions)
-    }
-    if (near.right.className == 'peg' && possible.right.className == 'hole') {
-        possible.right.className = 'suggestion'
-        suggestions.push(possible['right'].id)
-        console.log(suggestions)
-    }
-    if (near.bellow.className == 'peg' && possible.bellow.className == 'hole') {
-        possible.bellow.className = 'suggestion'
-        suggestions.push(possible['bellow'].id)
-        console.log(suggestions)
-    }
-} */
-
 
 
 var selectPeg = function (evt) {
@@ -296,32 +259,6 @@ var controlLocalStorage = function (evt) {
 
 }
 
-//Funcion para Agregar nombre antes de jugar
-
-
-
-
-
-
-//funcion guardar localstorage
-// var saveGameStorage = function (evt) {
-
-//     var localName = document.getElementById('name').value
-//     localStorage.setItem('nombre', localName)
-
-// }
-
-//funcion para guardar partida
-
-// var saveGame = function (evt) {
-//     var localBoard = JSON.stringify(board)
-//     var name = document.getElementById('name').value
-//     var puntos = document.getElementById('puntaje').value
-//     localStorage.setItem('board', localBoard)
-//     localStorage.setItem('name', name)
-//     localStorage.setItem('puntos', puntos)
-// }
-
 //Funcion para Guardar partida
 
 function saveGame() {
@@ -378,11 +315,7 @@ var puntos = function (x) {
      return a
 }
 
-// var addSaveEventHandlers = function(save){
 
-//     save.onclick = saveGame
-
-// }
 
 var addHolesEventHandlers = function (holes) {
 
@@ -392,37 +325,7 @@ var addHolesEventHandlers = function (holes) {
     }
 }
 
-// var capturaBoton = document.getElementById('buttonReset')
-// // funcion para reset
-// var resetEventHandlers = function (capturaBoton){
 
-//     console.log('hola')   
-// }
-
-//funcion para resetear, preuntando si o no
-
-/* var varReset = function reset() {
-    console.log('me estoy ejecutando cuando apreto reset y no antes')
-    if (confirm("Estas seguro que queres reiniciar?, se perdera lo que no hayas guardado")) {
-        
-        var response = "OK"
-        alert("Elegiste Ok, el juego se reiniciara")
-        boardElement.innerHTML = generateBoard()
-             //var boardElement = document.getElementById('board')
-    
-             boardElement.innerHTML = generateBoard()
-
-            
-    }
-    else {
-
-        var response = "CANCELAR"
-        alert("Elegiste candelar, ahora puedes guardar")
-    } */
-
-    
-//}
-// desplegar menu
 
 var deplegar = document.getElementById('boton-desplegable')
 
@@ -444,7 +347,7 @@ function changeDisplay () {
         document.getElementById('panelName').style.display = 'block'
     }
     
-    //console.log(display)
+ 
 }
 
 function showMenu () {
