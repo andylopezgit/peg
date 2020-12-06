@@ -1,437 +1,416 @@
 body {
-    background-color: grey;
-    display: flex;
-    flex-direction: column;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
 }
 
 .conteiner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer h2 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .footer a {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #panelName {
-    display: none;
-    margin-top: 10px;
-    box-shadow: 0 0 20px rgb(8, 155, 192);
+  display: none;
+  margin-top: 10px;
+  box-shadow: 0 0 20px rgb(8, 155, 192);
 }
 
-#panelName form{
-    width: 100%;
+#panelName form {
+  width: 100%;
 }
 
 #menu {
-    width: 300px;
+  width: 300px;
 }
 
 .section {
-    background-image: url('img/fondo.jpg');
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+  background-image: url("img/fondo.jpg");
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 #sp {
-    text-align: center;
+  text-align: center;
 }
-
 
 #desplegar {
-    display: none;
-    background: yellow;
-    box-shadow: 0 0 20px rgb(8, 155, 192);
-    margin-bottom: 10px;
-    margin-top: 10px;
+  display: none;
+  background: yellow;
+  box-shadow: 0 0 20px rgb(8, 155, 192);
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-#desplegar ul{
-    justify-content: center;
-    margin:0;
-    padding:0;
-    
+#desplegar ul {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
-
 
 #desplegar ul li {
-    list-style: none;
-    width: 100%;
-    justify-content: center;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
 }
 
 #desplegar ul li button {
-    width: 100%;
-    justify-content: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .panel {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
 .panel form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    text-align: center;
-    
+  text-align: center;
 }
 
 .panel form h2 {
-    color: white;
-    box-shadow: 0 0 6 px rgb(192, 164, 8);
+  color: white;
+  box-shadow: 0 0 6 px rgb(192, 164, 8);
 }
 
 .panel form input {
-    height: 30px;
-    text-align: center;
-    /*margin-bottom: 1%;*/
+  height: 30px;
+  text-align: center;
+  /*margin-bottom: 1%;*/
 }
 
 .panel2 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  flex-direction: column;
+}
 
+.panelScore {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.panelMail {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.mail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgb(8, 155, 192);
+}
+
+.panel2 #formScore {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgb(8, 155, 192);
+}
+
+#formScore h4 {
+  text-align: center;
+}
+
+.panel2 #formScore input {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  box-shadow: 0 0 50px rgb(192, 164, 8);
+  text-align: center;
+}
+
+.panel2 #formScore span {
+  display: flex;
+  background-color: yellow;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.panel2 #formScore span #score {
+  display: flex;
+  background-color: yellow;
+  justify-content: center;
+}
+
+#board {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: dimgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.board button {
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+  border: 1px solid #999;
+  border-radius: 50px;
+  /*box-shadow: 0 0 6px rgb(192, 164, 8);*/
+}
+
+.board button.hidden {
+  visibility: hidden;
+}
+
+.board button.peg {
+  background-color: #1f1f25;
+}
+
+.board button.peg:hover {
+  background-color: #0e0e14;
+}
+
+.board button.peg:active {
+  background-color: #000066;
+}
+
+.board button.hole {
+  background-color: white;
+}
+
+.board button.selected {
+  background-color: blue;
+}
+
+.board button.selected:active {
+  background-color: red;
+}
+
+.board button.suggestion {
+  background-color: green;
+}
+
+@media (max-width: 480px) {
+  body {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  #board {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .board button {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    border: 1px solid #999;
+    border-radius: 50px;
+  }
+  .panel {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
     margin: 1px;
-    flex-direction: column;
-}
+  }
 
-.panelScore {
-    width: 250px;
-    margin-bottom: 20px;
-}
-
-.panelMail {
-    width: 250px;
-    margin-bottom: 20px;
-}
-
-.mail {
+  .panel form {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 20px rgb(8, 155, 192)
-}
+    width: 100%;
+  }
 
-
-.panel2 #formScore {
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgb(8, 155, 192)
-
-}
-
-#formScore h4 {
+  .panel form h2 {
+    color: white;
+    box-shadow: 0 0 6px rgb(19, 164, 8);
     text-align: center;
-}
+  }
 
-.panel2 #formScore input {
+  .panel form input {
+    height: 30px;
+    text-align: center;
+    /*margin-bottom: 1%;*/
+  }
+  .panel2 #formScore {
+    width: 100%;
+  }
+
+  .footer {
     display: flex;
-    background-color: white;
     align-items: center;
     justify-content: center;
-    color:rgb(0, 0, 0);
-    font-size: 20px;
-    box-shadow: 0 0 50px rgb(192, 164, 8);
-    text-align: center;
-}
+    width: 100vw;
+  }
 
-.panel2 #formScore span {
-    display: flex;
-    background-color: yellow;
-    justify-content: center;
+  .panel2 {
+    width: 100%;
+    height: 100%;
     align-items: center;
-    text-align: center;
-
-
-    
+    justify-content: center;
+  }
 }
 
-.panel2 #formScore span #score {
-    display: flex;
-    background-color: yellow;
-    justify-content: center;
-}  
-
-
-#board {
+@media (max-width: 320px) {
+  body {
+    background-color: red;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: ease all 0.5s;
+  }
+
+  #board {
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    background-color: dimgray;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-}
+    padding: 1%;
+    width: 200px;
+    height: 100%;
+    transition: ease all 0.5s;
+  }
 
-.board button {
-    width: 40px;
-    height: 40px;
-    margin: 2px;
-    border: 1px solid #999;
+  .board button {
+    width: 20px;
+    height: 20px;
+    border: 1% solid #999;
     border-radius: 50px;
-    /*box-shadow: 0 0 6px rgb(192, 164, 8);*/
+    transition: ease all 0.5s;
+  }
+  .panel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    transition: ease all 0.5s;
+  }
+
+  .panel form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: ease all 0.9s;
+  }
+
+  .panel form h2 {
+    color: white;
+    box-shadow: 0 0 6px rgb(19, 164, 8);
+    text-align: center;
+    transition: ease all 0.5s;
+  }
+
+  .panel form input {
+    height: 30px;
+    text-align: center;
+    transition: ease all 0.5s;
+    /*margin-bottom: 1%;*/
+  }
+  .panel2 #formScore {
+    width: 100%;
+    transition: ease all 0.5s;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    transition: ease all 0.5s;
+  }
+
+  .panel2 {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: ease all 0.5s;
+  }
+
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: ease all 0.5s;
+  }
+
+  .footer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: ease all 0.5s;
+  }
+
+  .panelScore {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .panelMail {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
-
-.board button.hidden {
-    visibility: hidden;
-}
-
-.board button.peg {
-    background-color: #1f1f25;
-}
-
-.board button.peg:hover {
-    background-color: #0e0e14
-}
-
-.board button.peg:active {
-    background-color: #000066;
-}
-
-.board button.hole {
-    background-color: white;
-}
-
-.board button.selected {
-    background-color: blue;
-}
-
-.board button.selected:active {
-    background-color: red;
-}
-
-.board button.suggestion {
-    background-color: green;
-}
-
-
-@media (max-width: 480px) {
-
-    body {
-        background-color: yellow;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-    }
-
-    #board {
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        justify-content: center;
-        align-items: center;
-        padding: 1%;
-        width: 100%;
-        height: 100%;
-        }
-
-        .board button {
-            width: 30px;
-            height: 30px;
-            margin: 2px;
-            border: 1px solid #999;
-            border-radius: 50px;
-        }
-    .panel {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        margin: 1px;
-    }
-    
-    .panel form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        
-    }
-    
-    .panel form h2 {
-        color: white;
-        box-shadow: 0 0 6px rgb(19, 164, 8);
-        text-align: center;
-    }
-    
-    .panel form input {
-        height: 30px;
-        text-align: center;
-        /*margin-bottom: 1%;*/
-    }   
-    .panel2 #formScore {
-
-        width: 100%;
-        
-    }
-
-    .footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100vw;
-    }
-
-    .panel2 {
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-    @media (max-width: 320px) {
-        body {
-            background-color: red;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            transition: ease all .5s;
-        }
-    
-        #board {
-            display: flex;
-            flex-direction: column;
-            border-radius: 5px;
-            justify-content: center;
-            align-items: center;
-            padding: 1%;
-            width: 200px;
-            height: 100%;
-            transition: ease all .5s;
-            }
-    
-            .board button {
-                width: 20px;
-                height: 20px;
-                border: 1% solid #999;
-                border-radius: 50px;
-                transition: ease all .5s;
-            }
-        .panel {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            margin: 1px;
-            transition: ease all .5s;
-        }
-        
-        .panel form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            transition: ease all .9s;
-            
-        }
-        
-        .panel form h2 {
-            color: white;
-            box-shadow: 0 0 6px rgb(19, 164, 8);
-            text-align: center;
-            transition: ease all .5s;
-        }
-        
-        .panel form input {
-            height: 30px;
-            text-align: center;
-            transition: ease all .5s;
-            /*margin-bottom: 1%;*/
-        }   
-        .panel2 #formScore {
-    
-            width: 100%;
-            transition: ease all .5s;
-            
-        }
-    
-        .footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            transition: ease all .5s;
-        }
-    
-        .panel2 {
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            transition: ease all .5s;
-        }
-
-        .conteiner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            transition: ease all .5s;
-        }
-
-        .footer {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            transition: ease all .5s;
-        }
-
-        .panelScore {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        
-        .panelMail {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-    }
