@@ -53,12 +53,12 @@
             </form>
           </div>
           <div class="panelMail">
-            <form action="mailto:alopezciotta@gmail.com" id="formScore">
+            <form action="mailto:alopezciotta@gmail.com" id="formScore" method="post" onsubmit="event.preventDefault()">
               <span><h3>Envianos un comentarios</h3></span>
-              <input type="text" id="score" value="" placeholder="Nombre"/>
-              <input type="mail" id="rankingName" value="" placeholder="Email"/>
-              <textarea name="comentarios" rows="4"  placeholder="Comentarios..."></textarea>
-              <button type="submit">Enviar</button>
+              <input type="text" id="formName" value="" placeholder="Nombre" required/>
+              <input type="mail" id="formMail" value="" placeholder="Email" required/>
+              <textarea name="comentarios" rows="4" id="formComent" placeholder="Comentarios..." required></textarea>
+              <button type="submit" id="enviar">Enviar</button>
             </form>
           </div>
         </div>

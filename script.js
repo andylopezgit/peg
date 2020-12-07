@@ -80,7 +80,7 @@ var selectPeg = function (evt) {
   }
 
   if (posibilities === 0) {
-    window.alert("No hay mas movimientos posibles")
+    gameOver()
   }
 }
 
@@ -102,18 +102,17 @@ var gameOver = function () {
   }
   suggestions = [];
   if (posibilities === 0) {
-    console.log("no hay mas mov");
     saveName()
   }
 }
 
 var saveName = function () {
   var option = window.confirm(
-    "No hay mas movimientos posibles¿Desea guardar su puntaje?"
+    "No hay mas movimientos posibles, Ingrese su nombre y presione Guardar?"
   );
-  if (option == 1) {
+  /* if (option == 1) {
     changeDisplay()
-  }
+  } */
 };
 
 
@@ -162,7 +161,7 @@ function nam() {
   }
 }
 
-//funcion para localstorage
+//funcion saber si el navegador soporta localstorage
 
 var controlLocalStorage = function (evt) {
   if (localStorage) {
@@ -192,16 +191,15 @@ function saveGame() {
 }
 
 function getGame(env) {
-  console.log("cargar")
   var guardado = localStorage.getItem("board")
   board = JSON.parse(guardado)
   init()
 }
 
-function getSaveRanking() {
+/* function getSaveRanking() {
   var dat = document.getElementById("rankingName").value
   dat = localStorage.getItem("name")
-}
+} */
 
 //funcion para contar puntaje
 
@@ -227,13 +225,11 @@ var addHolesEventHandlers = function (holes) {
 
 var deplegar = document.getElementById("boton-desplegable")
 
-//funcion recuperar datos localHost
 
-// funcion para mostrar el menu
+// funcion para mostrar el menu nombre y guardar
 
 function changeDisplay() {
   var menu = document.getElementById("panelName")
-  console.log("Hola")
   var x = menu.style.display
   var y = getComputedStyle(menu)
   var display = y.display
@@ -249,7 +245,6 @@ function showMenu() {
   var menus = document.getElementById("desplegar")
   var yy = getComputedStyle(menus)
   var displayy = yy.display
-  console.log(displayy)
 
   if (displayy === "none") {
     document.getElementById("desplegar").style.display = "block"
@@ -273,10 +268,34 @@ var resetBoard = function (evt) {
       }
     }
     board[3][3] = { value: 0 }
-    //score= 0
-    //showScore()
     init()
   }
+}
+
+function validateName () {
+
+}
+
+
+
+function validateForm () {
+
+    var comments = document.getElementById('formComent').value
+    var mail = document.getElementById('formMail').value
+    console.log(mail)
+
+    if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(mail)){
+        alert("La dirección de email " + mail + " es correcta.");
+       } else {
+        alert("La dirección de email es incorrecta.");
+       }
+
+    if (comments.length < 5) {
+        alert('El comentario tiene que tener al menos 5 caracteres')
+    } else {
+        alert ('Comentario correcto')
+    }
+
 }
 
 var init = function () {
@@ -304,9 +323,8 @@ var init = function () {
   document.getElementById("scorePlayer").value = pasar
 
   var reset = document.getElementById("buttonReset")
-  addResetEventHandlers(reset)
 
-  //document.getElementById("buttonReset").addEventListener("click", varReset); //con el evento click, ejecuto la funcion
+  addResetEventHandlers(reset)
 
   var bgetGame = document.getElementById("buttonGet")
 
@@ -314,21 +332,20 @@ var init = function () {
 
   var getLocName = localStorage.getItem("name")
 
-  document.getElementById("rankingName").value = getLocName
+  //document.getElementById("rankingName").value = getLocName
 
   var getLocScore = localStorage.getItem("score")
-
-  //document.getElementById('rankingScore').value = getLocScore
-
-  //console.log(getLocScore)
 
   gameOver()
 
   var desplegable = document.getElementById("boton-desplegable")
   desplegable.addEventListener("click", showMenu)
-  //saveName()
 
   button()
+
+  var sendMail = document.getElementById("enviar")
+
+  sendMail.addEventListener("click", validateForm)
 }
 
 window.onload = init
