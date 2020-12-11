@@ -226,7 +226,7 @@ var addHolesEventHandlers = function (holes) {
 var deplegar = document.getElementById("boton-desplegable")
 
 
-// funcion para mostrar el menu nombre y guardar
+// funcion para mostrar el menu nombre y guardar add 
 
 function changeDisplay() {
   var menu = document.getElementById("panelName")

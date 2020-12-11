@@ -203,7 +203,7 @@ body {
 }
 
 .board button.peg {
-  background-color: #1f1f25;
+  background-color: #e8e8f3;
 }
 
 .board button.peg:hover {
@@ -215,11 +215,11 @@ body {
 }
 
 .board button.hole {
-  background-color: white;
+  background-color: rgb(8, 0, 0);
 }
 
 .board button.selected {
-  background-color: blue;
+  background-color: rgb(255, 238, 0);
 }
 
 .board button.selected:active {
